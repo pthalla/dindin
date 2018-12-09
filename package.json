@@ -1,0 +1,29 @@
+{
+  "name": "dindin",
+  "version": "1.0.0",
+  "description": "What's for din din?",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "geolocation": "^0.2.0",
+    "html5-geolocation": "^2.0.0",
+    "request": "^2.88.0",
+    "web-midi-api": "^2.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PraneethVT/dindin.git"
+  },
+  "author": "Praneeth Thalla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PraneethVT/dindin/issues"
+  },
+  "homepage": "https://github.com/PraneethVT/dindin#readme"
+}
