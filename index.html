@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>What's for din din?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <div id="dinholder">
+    <div id="dinimage">
+      image
+    </div>
+
+    <div id="demo">
+      name
+    </div>
+
+    <div id="restaurant">
+      rest goes here
+    </div>
+
+
+
+  </div>
+</body>
+
+<script>
+  var x = document.getElementById("demo");
+  function getLocation() {
+    console.log('in')
+    if (navigator.geolocation) {
+      console.log('yes')
+      navigator.geolocation.getCurrentPosition((position) => {
+        console.log('success!')
+        document.getElementById("demo").innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude; 
+        
+        yelpurl = "http://localhost:3000/getyelp" + "?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude
+
+        $.get(yelpurl, (res) => {
+          console.log(res)
+          arr = res["businesses"]
+          var randNum = Math.floor((Math.random() * arr.length) + 1);
+          console.log(randNum)
+          console.log(arr[randNum])
+          $("#restaurant").text(arr[randNum]["name"])
+        });
+
+
+
+      });
+    } else {
+      console.log('no')
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+
+  console.log('hello')
+  getLocation()
+</script>
+</html>
