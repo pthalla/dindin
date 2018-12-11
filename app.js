@@ -27,8 +27,14 @@ app.get("/randomfood", (req, res, next) => {
     if (err) return console.log(err)
     var businesses = JSON.parse(body)
     var restaurantArr = businesses["businesses"];
-    var randNum = Math.floor((Math.random() * restaurantArr.length) + 1)
+    var randNum = Math.floor(Math.random() * restaurantArr.length)
     var restaurant = restaurantArr[randNum]
+    if (restaurant == undefined) {
+      console.log(restaurantArr)
+      console.log(restaurantArr.length)
+      console.log(randNum)
+      res.send({})
+    }
     din = {
       image: restaurant["image_url"],
       name: restaurant["name"],

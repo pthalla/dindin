@@ -8,25 +8,56 @@ body, html {
   max-height: 100vh;
   margin: auto;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+#answer {
+  font-weight: 400;
+}
+
+#answerspan {
+  font-weight: 700;
+  font-style: italic;
+  /* color: #C74E3D; */
+}
+
+#dindinheader {
+  color: #C74E3D;
+  font-weight: normal;
 }
 
 #answer {
   padding-top: 3rem;
   margin: 0;
+  font-size: 2rem;
 }
 
 #dinimage {
   width: auto;
   height: 300px;
   margin-top: 2rem;
+  border-radius: 10%;
 }
 
 .desc {
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-weight: bold;
 }
 
 .desc span {
   font-weight: normal;
+}
+
+#websitebtn {
+  margin-top: 2rem;
+}
+
+#dinwebsite {
+  font-size: 1.1rem;
+  background-color: #C74E3D;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  font-weight: normal;
+  border-radius: 5px;
 }

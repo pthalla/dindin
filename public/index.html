@@ -11,23 +11,19 @@
   <script src="displayfood.js"></script>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="bower_components/fakeLoader/fakeLoader.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,700i,900,900i" rel="stylesheet">
 </head>
 <body>
   <div id="fakeloader"></div>
   <div id="landingholder">
-    <h1 id="answer"></h1>
+    <p id="answer"><span id="answerspan"></span> is for <span id="dindinheader">din din</span></p>
 
     <div id="dinholder">
       <img id="dinimage" src=""/>
       <p class="desc">Name: <span id="dinname"></span></p>
       <p class="desc">Phone: <span id="dinphone"></span></p>
-      <p class="desc"><a id="dinwebsite" href="#">Website</a></p>
+      <p class="desc" id="websitebtn"><a id="dinwebsite" href="#">Website</a></p>
     </div>
   </div>  
-  <script type="text/javascript">
-
-    $("#fakeloader").fakeLoader();
-    
-    </script>
 </body>
 </html>

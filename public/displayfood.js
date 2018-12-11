@@ -1,10 +1,16 @@
 $(document).ready(function() {
-  $("#fakeloader").fakeLoader();
+  $("#fakeloader").fakeLoader({
+    bgColor: "#C74E3D"
+  });
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       url = "http://localhost:3000/randomfood" + "?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude
       $.get(url, function(res) {
-        $("#answer").text(res.name + " is for din din")
+        if (res == {}) {
+          $("#answer").text("Sorry for the inconvenience, please try again later :)");
+          return;
+        }
+        $("#answerspan").text(res.name)
         $("#dinimage").attr("src", res.image)
         $("#dinname").text(res.name)
         $("#dinphone").text(res.phone)
