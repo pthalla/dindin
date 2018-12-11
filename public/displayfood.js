@@ -1,14 +1,14 @@
 $(document).ready(function() {
+  $("#fakeloader").fakeLoader();
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       url = "http://localhost:3000/randomfood" + "?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude
-      $("#landingholder").show()
       $.get(url, function(res) {
         $("#answer").text(res.name + " is for din din")
         $("#dinimage").attr("src", res.image)
         $("#dinname").text(res.name)
         $("#dinphone").text(res.phone)
-        $("#dinwebsite").attr("href", res.website)
+        $("#dinwebsite").attr("href", res.website).attr("target", "_blank")
         console.log(res)
       });
     }, function(err) {

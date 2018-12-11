@@ -7,11 +7,14 @@
   <title>What's for din din?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="bower_components/fakeLoader/fakeLoader.min.js"></script>
   <script src="displayfood.js"></script>
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="bower_components/fakeLoader/fakeLoader.css">
 </head>
 <body>
-  <div id="landingholder" style="display:none;">
+  <div id="fakeloader"></div>
+  <div id="landingholder">
     <h1 id="answer"></h1>
 
     <div id="dinholder">
@@ -21,5 +24,10 @@
       <p class="desc"><a id="dinwebsite" href="#">Website</a></p>
     </div>
   </div>  
+  <script type="text/javascript">
+
+    $("#fakeloader").fakeLoader();
+    
+    </script>
 </body>
 </html>
