@@ -1,3 +1,7 @@
+function showGeo() {
+  location.reload()
+}
+
 $(document).ready(function() {
   $("#fakeloader").fakeLoader({
     bgColor: "#C74E3D"

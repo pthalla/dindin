@@ -13,6 +13,14 @@ body, html {
   font-size: 1.5rem;
 }
 
+#error span {
+  font-weight: 900;
+}
+
+#error span :hover {
+  cursor: pointer;
+}
+
 #landingholder {
   width: 80%;
   max-height: 100vh;
@@ -38,8 +46,9 @@ body, html {
 }
 
 #dinimage {
-  width: auto;
-  height: 300px;
+  max-height: 300px;
+  max-width: 80%;
+  margin: auto;
   margin-top: 2rem;
   border-radius: 10%;
 }

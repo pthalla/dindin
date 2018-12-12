@@ -1,5 +1,6 @@
 const express = require('express')
 const request = require('request')
+const auth = process.env.auth || require('./config.js')
 
 const app = express();
 app.use(function(req, res, next) {
@@ -18,7 +19,7 @@ app.get("/randomfood", (req, res, next) => {
   var options = {
     url: url,
     headers: {
-      "Authorization": process.env.auth
+      "Authorization": auth
     }
   }
 
