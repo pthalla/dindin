@@ -1,50 +1,39 @@
+// Reloads the page (may ask browser to request permission for location again)
 function showGeo() {
   location.reload()
 }
 
 $(document).ready(function() {
+  // Show fake loader
   $("#fakeloader").fakeLoader({
-    bgColor: "#C74E3D"
+    bgColor: "#C74E3D",
+    timeToHide: 5000
   });
   $("#error").show()
+
+  // Check if Geolocation is supported by Browser
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
+      // Ajax call to REST API
       url = "randomfood" + "?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude
       $.get(url, function(res) {
+        // Hide error message and end the fake loader
         $("#error").hide()
+        $("#fakeloader").fakeLoader({
+          bgColor: "#C74E3D",
+          timeToHide: 800
+        });
+        
+        // Show the landing div and populate the fields 
         $("#landingholder").show()
-        if (res == {}) {
-          $("#answer").text("Sorry for the inconvenience, please try again later :)");
-          return;
-        }
         $("#answerspan").text(res.name)
         $("#dinimage").attr("src", res.image)
         $("#dinname").text(res.name)
         $("#dinphone").text(res.phone)
         $("#dinwebsite").attr("href", res.website).attr("target", "_blank")
-        console.log(res)
       });
-    }, function(err) {
-      console.log(err) // TODO: better error handling
     });
   } else {
     $("#answer").text("Geolocation is not supported by this browser");
   } 
-
-  
 });
-
-/*
-Image: "image_url": "http://s3-media2.fl.yelpcdn.com/bphoto/MmgtASP3l_t4tPCL1iAsCg/o.jpg",
-
-Name: "name": "Four Barrel Coffee"
-
-Phone: "phone": "+14152520800"
-
-Website: "url": "https://www.yelp.com/biz/four-barrel-coffee-san-francisco"
-
-
-*/
-
-
-

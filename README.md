@@ -1,1 +1,1 @@
-What's for din din?
+Tells you what's for dinner tonight
