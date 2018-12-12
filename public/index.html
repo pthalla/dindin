@@ -12,18 +12,21 @@
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="bower_components/fakeLoader/fakeLoader.css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,700i,900,900i" rel="stylesheet">
+  <link rel="shortcut icon" type="image/x-icon" href="Icons8-Ios7-Food-Bread.ico"/>
 </head>
 <body>
   <div id="fakeloader"></div>
-  <div id="landingholder">
-    <p id="answer"><span id="answerspan"></span> is for <span id="dindinheader">din din</span></p>
-
-    <div id="dinholder">
-      <img id="dinimage" src=""/>
-      <p class="desc">Name: <span id="dinname"></span></p>
-      <p class="desc">Phone: <span id="dinphone"></span></p>
-      <p class="desc" id="websitebtn"><a id="dinwebsite" href="#">Website</a></p>
-    </div>
-  </div>  
+  
+  <p id="error" style="display: none">Sorry, something went wrong. Please refresh the page or try again later! :)</p>
+  
+  <div id="landingholder" style="display: none">
+    <p id="answer"><span id="answerspan"></span> is for <span id="dindinbrand">din din</span></p>
+    
+    <img id="dinimage" src=""/>
+    <p class="desc">Name: <span id="dinname"></span></p>
+    <p class="desc">Phone: <span id="dinphone"></span></p>
+    <p class="desc" id="websitebtn"><a id="dinwebsite" href="#">Website</a></p>
+  </div> 
+   
 </body>
 </html>

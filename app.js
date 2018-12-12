@@ -29,12 +29,7 @@ app.get("/randomfood", (req, res, next) => {
     var restaurantArr = businesses["businesses"];
     var randNum = Math.floor(Math.random() * restaurantArr.length)
     var restaurant = restaurantArr[randNum]
-    if (restaurant == undefined) {
-      console.log(restaurantArr)
-      console.log(restaurantArr.length)
-      console.log(randNum)
-      res.send({})
-    }
+    
     din = {
       image: restaurant["image_url"],
       name: restaurant["name"],
@@ -48,7 +43,7 @@ app.get("/randomfood", (req, res, next) => {
 })
 
 
-const port = 3000;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Dindin listening on port ${port}`)
 })

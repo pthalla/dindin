@@ -2,10 +2,13 @@ $(document).ready(function() {
   $("#fakeloader").fakeLoader({
     bgColor: "#C74E3D"
   });
+  $("#error").show()
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      url = "http://localhost:3000/randomfood" + "?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude
+      url = "randomfood" + "?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude
       $.get(url, function(res) {
+        $("#error").hide()
+        $("#landingholder").show()
         if (res == {}) {
           $("#answer").text("Sorry for the inconvenience, please try again later :)");
           return;
