@@ -1,6 +1,5 @@
 const express = require('express')
 const request = require('request')
-const auth = require('./config')
 
 const app = express();
 app.use(function(req, res, next) {
@@ -19,7 +18,7 @@ app.get("/randomfood", (req, res, next) => {
   var options = {
     url: url,
     headers: {
-      "Authorization": auth
+      "Authorization": process.env.auth
     }
   }
 
@@ -29,7 +28,7 @@ app.get("/randomfood", (req, res, next) => {
     var restaurantArr = businesses["businesses"];
     var randNum = Math.floor(Math.random() * restaurantArr.length)
     var restaurant = restaurantArr[randNum]
-    
+
     din = {
       image: restaurant["image_url"],
       name: restaurant["name"],
