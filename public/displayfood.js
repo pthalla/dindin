@@ -21,7 +21,7 @@ $(document).ready(function() {
         $("#error").hide()
         $("#fakeloader").fakeLoader({
           bgColor: "#C74E3D",
-          timeToHide: 800
+          timeToHide: 500
         });
         
         // Show the landing div and populate the fields 
